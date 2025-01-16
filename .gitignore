@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Ambiente Virtual
+venv/
+env/
+ENV/
+*.egg-info/
+*.egg
+
+# Arquivos de Banco de Dados
+*.sqlite3
+
+# Arquivos de Configuração do IDE
+.vscode/
+.idea/
+
+# Arquivos de Log
+*.log
+
+# Arquivos de Cache
+*.cache
+
+# Outros
+*.DS_Store
+*.env

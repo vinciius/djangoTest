@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos - Fruteirinha</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Lista de Frutas</h1>
+        <nav>
+            <ul>
+                <li><a href="/home/">Home</a></li>
+                <li><a href="/contato/">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Frutas Disponíveis</h2>
+        <ul>
+            {% for fruta in frutas %}
+                <li>{{ fruta.nome }} - R$ {{ fruta.preco }}</li>
+            {% empty %}
+                <li>Nenhuma fruta cadastrada.</li>
+            {% endfor %}
+        </ul>
+        <h2>Cadastrar Nova Fruta</h2>
+        <form action="/produtos/" method="post">
+            {% csrf_token %}
+            <label for="nome">Nome da Fruta:</label>
+            <input type="text" id="nome" name="nome" required>
+            <br>
+            <label for="preco">Preço:</label>
+            <input type="text" id="preco" name="preco" required>
+            <br>
+            <button type="submit">Cadastrar</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2025 Fruteirinha. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
